@@ -15,7 +15,7 @@ class FirstActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.button.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
+            val intent = Intent(this, SecondActivity::class.java).addFlags(FLAG_ACTIVITY_NO_HISTORY)
             startActivity(intent)
         }
         binding.buttonAbout.setOnClickListener {

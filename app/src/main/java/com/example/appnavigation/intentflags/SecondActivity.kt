@@ -1,7 +1,6 @@
 package com.example.appnavigation.intentflags
 
 import android.content.Intent
-import android.content.Intent.FLAG_ACTIVITY_TASK_ON_HOME
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.appnavigation.databinding.SecondActvBinding
