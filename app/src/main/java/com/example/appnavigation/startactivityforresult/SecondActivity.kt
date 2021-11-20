@@ -13,10 +13,10 @@ class SecondActivity : AppCompatActivity() {
         val binding = SecondActvBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.button.setOnClickListener {
+        binding.bnToFirst.setOnClickListener {
             finish()
         }
-        binding.button2.setOnClickListener {
+        binding.bnToThird.setOnClickListener {
             val intent = Intent(this, ThirdActivity::class.java)
             startActivityForResult(intent, 123)
         }

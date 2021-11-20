@@ -19,7 +19,7 @@ class FirstFragment : Fragment() {
         val binding = FirstActvBinding.inflate(layoutInflater)
         val controller = this.findNavController()
 
-        binding.button.setOnClickListener{
+        binding.bnToSecond.setOnClickListener{
             controller.navigate(R.id.action_firstFragment_to_secondFragment)
         }
         binding.buttonAbout.setOnClickListener {

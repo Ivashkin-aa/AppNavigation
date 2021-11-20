@@ -13,11 +13,11 @@ class ThirdActivity : AppCompatActivity() {
         val binding = ThirdActvBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.button.setOnClickListener {
+        binding.bnToFirst.setOnClickListener {
             val intent = Intent(this, FirstActivity::class.java).addFlags(FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
-        binding.button2.setOnClickListener {
+        binding.bnToSecond.setOnClickListener {
             finish()
         }
 
