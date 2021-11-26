@@ -2,7 +2,6 @@ package com.example.appnavigation
 
 import androidx.test.core.app.launchActivity
 import com.example.appnavigation.navgrap.MainActivity
-import androidx.test.core.app.launchActivity
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions
@@ -46,13 +45,13 @@ class NavigationTest {
     fun testAbout() {
         Espresso.onView(withId(R.id.first))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
-        aboutFromFirst()
+        aboutFrom(1)
         Espresso.onView(withId(R.id.bnToSecond))
             .perform(ViewActions.click())
-        aboutFromSecond()
+        aboutFrom(2)
         Espresso.onView(withId(R.id.bnToThird))
             .perform(ViewActions.click())
-        aboutFromThird()
+        aboutFrom(3)
     }
 
     @Test

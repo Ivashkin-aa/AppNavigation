@@ -13,9 +13,6 @@
         <action
             android:id="@+id/action_firstFragment_to_secondFragment"
             app:destination="@id/secondFragment" />
-        <action
-            android:id="@+id/action_firstFragment_to_aboutActivity"
-            app:destination="@id/aboutActivity" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
@@ -30,9 +27,7 @@
         <action
             android:id="@+id/action_secondFragment_to_thirdFragment"
             app:destination="@id/thirdFragment" />
-        <action
-            android:id="@+id/action_secondFragment_to_aboutActivity"
-            app:destination="@id/aboutActivity" />
+
     </fragment>
     <fragment
         android:id="@+id/thirdFragment"
@@ -49,12 +44,9 @@
             app:destination="@id/firstFragment"
             app:popUpTo="@id/firstFragment"
             app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_thirdFragment_to_aboutActivity"
-            app:destination="@id/aboutActivity" />
     </fragment>
     <activity
-        android:id="@+id/aboutActivity"
+        android:id="@+id/activityAbout"
         android:name="com.example.appnavigation.navgrap.AboutActivity"
         android:label="AboutActivity"
         tools:layout="@layout/about_actv" />

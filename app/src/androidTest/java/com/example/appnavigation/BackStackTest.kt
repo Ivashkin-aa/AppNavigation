@@ -53,11 +53,11 @@ class BackStackTest {
     fun thirdTest() {
         Espresso.onView(withId(R.id.first))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
-        aboutFromFirst()
+        aboutFrom(1)
         checkBnTo(2)
-        aboutFromSecond()
+        aboutFrom(2)
         checkBnTo(3)
-        aboutFromThird()
+        aboutFrom(3)
     }
 
     @Test
@@ -65,7 +65,7 @@ class BackStackTest {
         Espresso.onView(withId(R.id.first))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
         checkBnTo(2)
-        aboutFromSecond()
+        aboutFrom(2)
         checkBnTo(3)
         checkBnTo(2)
         Espresso.pressBack()
@@ -73,7 +73,7 @@ class BackStackTest {
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
         checkBnTo(2)
         checkBnTo(3)
-        aboutFromThird()
+        aboutFrom(3)
         repeat(2) {
             Espresso.pressBack()
         }

@@ -8,4 +8,5 @@
     <string name="activity3">Activity 3</string>
     <string name="some_text">Some Text</string>
     <string name="about_activity">About Activity</string>
+    <string name="about">about</string>
 </resources>

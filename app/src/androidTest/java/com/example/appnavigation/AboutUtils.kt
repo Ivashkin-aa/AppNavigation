@@ -6,6 +6,7 @@ import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.DrawerActions
 import androidx.test.espresso.contrib.DrawerMatchers.isClosed
+import androidx.test.espresso.contrib.NavigationViewActions
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 
@@ -22,12 +23,17 @@ private fun openAboutViaDrawer(fragment: Int) {
         .perform(DrawerActions.open())
 
     onView(withId(R.id.nav_view))
+        .perform(NavigationViewActions.navigateTo(R.id.activityAbout))
+
+
+
+  /*  onView(withId(R.id.nav_view))
         .check(matches(isDisplayed()))
     onView(withId(R.id.button_about))
         .check(matches(isDisplayed()))
         .perform(click())
     onView(withId(R.id.about_actv))
-        .check(matches(isDisplayed()))
+        .check(matches(isDisplayed()))*/
 }
 
 fun openAbout(fragment: Int) = openAboutViaDrawer(fragment)

@@ -2,14 +2,18 @@ package com.example.appnavigation.intentflags
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.example.appnavigation.R
 import com.example.appnavigation.databinding.SecondActvBinding
+import com.google.android.material.navigation.NavigationView
 
-class SecondActivity : AppCompatActivity() {
+class SecondActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = SecondActvBinding.inflate(layoutInflater)
+        binding.navView.setNavigationItemSelectedListener(this)
         setContentView(binding.root)
 
         binding.bnToFirst.setOnClickListener {
@@ -19,9 +23,16 @@ class SecondActivity : AppCompatActivity() {
             val intent = Intent(this, ThirdActivity::class.java)
             startActivity(intent)
         }
-        binding.buttonAbout.setOnClickListener {
-            val intent = Intent(this, AboutActivity::class.java)
-            startActivity(intent)
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.activityAbout -> {
+                val intent = Intent(this, AboutActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

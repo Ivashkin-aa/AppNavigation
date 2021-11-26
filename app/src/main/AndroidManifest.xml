@@ -18,8 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".navgrap.AboutActivity" />
-        <!--<activity
+        <activity
+            android:name=".navgrap.AboutActivity" />
+        <!--activity
             android:name=".intentflags.SecondActivity"/>
         <activity
             android:name=".intentflags.ThirdActivity"/>
