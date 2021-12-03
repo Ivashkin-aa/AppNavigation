@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppNavigation">
         <activity
-            android:name=".navgrap.MainActivity"
+            android:name=".startactivityforresult.FirstActivity"
+            android:launchMode="singleTop"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,14 +19,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--<activity
+            android:name=".navgrap.AboutActivity"
+            android:parentActivityName=".navgrap.MainActivity"/>-->
         <activity
-            android:name=".navgrap.AboutActivity" />
-        <!--activity
-            android:name=".intentflags.SecondActivity"/>
+            android:name=".startactivityforresult.SecondActivity"
+            android:parentActivityName=".startactivityforresult.FirstActivity"/>
         <activity
-            android:name=".intentflags.ThirdActivity"/>
+            android:name=".startactivityforresult.ThirdActivity"
+            android:parentActivityName=".startactivityforresult.SecondActivity"/>
         <activity
-            android:name=".intentflags.AboutActivity"/>-->
+            android:name=".startactivityforresult.AboutActivity"/>
     </application>
 
 </manifest>

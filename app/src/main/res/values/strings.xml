@@ -9,4 +9,9 @@
     <string name="some_text">Some Text</string>
     <string name="about_activity">About Activity</string>
     <string name="about">about</string>
+    <string name="fragment1">Fragment1</string>
+    <string name="fragment2">Fragment2</string>
+    <string name="fragment3">Fragment3</string>
+    <string name="navigation_drawer_open">navigation_drawer_open</string>
+    <string name="navigation_drawer_close">navigation_drawer_close</string>
 </resources>

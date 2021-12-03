@@ -2,13 +2,10 @@ package com.example.appnavigation.intentflags
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
-import com.example.appnavigation.R
 import com.example.appnavigation.databinding.SecondActvBinding
-import com.google.android.material.navigation.NavigationView
+import com.example.appnavigation.startactivityforresult.AbstractActivity
 
-class SecondActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class SecondActivity : AbstractActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,14 +22,4 @@ class SecondActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         }
     }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.activityAbout -> {
-                val intent = Intent(this, AboutActivity::class.java)
-                startActivity(intent)
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
 }

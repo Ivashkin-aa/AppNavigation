@@ -3,52 +3,53 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/firstFragment">
+    app:startDestination="@id/fragment1">
 
     <fragment
-        android:id="@+id/firstFragment"
-        android:name="com.example.appnavigation.navgrap.FirstFragment"
-        android:label="FirstFragment"
-        tools:layout="@layout/first_actv">
+        android:id="@+id/fragment1"
+        android:name="com.example.appnavigation.navgrap.Fragment1"
+        android:label="Fragment1"
+        tools:layout="@layout/fragment1">
         <action
-            android:id="@+id/action_firstFragment_to_secondFragment"
-            app:destination="@id/secondFragment" />
+            android:id="@+id/to_SecondFragment"
+            app:destination="@id/fragment2" />
     </fragment>
     <fragment
-        android:id="@+id/secondFragment"
-        android:name="com.example.appnavigation.navgrap.SecondFragment"
-        android:label="SecondFragment"
-        tools:layout="@layout/second_actv">
+        android:id="@+id/fragment2"
+        android:name="com.example.appnavigation.navgrap.Fragment2"
+        android:label="Fragment2"
+        tools:layout="@layout/fragment2">
         <action
-            android:id="@+id/action_secondFragment_to_firstFragment"
-            app:destination="@id/firstFragment"
-            app:popUpTo="@id/firstFragment"
-            app:popUpToInclusive="true" />
+            android:id="@+id/to_FirstFragment"
+            app:destination="@id/fragment1"
+            app:popUpTo="@id/fragment1"
+            app:popUpToInclusive="true"/>
         <action
-            android:id="@+id/action_secondFragment_to_thirdFragment"
-            app:destination="@id/thirdFragment" />
+            android:id="@+id/to_ThirdFragment"
+            app:destination="@id/fragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment3"
+        android:name="com.example.appnavigation.navgrap.Fragment3"
+        android:label="Fragment3"
+        tools:layout="@layout/fragment3">
+        <action
+            android:id="@+id/to_FirstFragment"
+            app:destination="@id/fragment1"
+            app:popUpTo="@id/fragment1"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/to_SecondFragment"
+            app:destination="@id/fragment2"
+            app:popUpTo="@id/fragment2"
+            app:popUpToInclusive="true"/>
+    </fragment>
 
-    </fragment>
-    <fragment
-        android:id="@+id/thirdFragment"
-        android:name="com.example.appnavigation.navgrap.ThirdFragment"
-        android:label="ThirdFragment"
-        tools:layout="@layout/third_actv">
-        <action
-            android:id="@+id/action_thirdFragment_to_secondFragment"
-            app:destination="@id/secondFragment"
-            app:popUpTo="@id/secondFragment"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_thirdFragment_to_firstFragment"
-            app:destination="@id/firstFragment"
-            app:popUpTo="@id/firstFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
     <activity
         android:id="@+id/activityAbout"
         android:name="com.example.appnavigation.navgrap.AboutActivity"
         android:label="AboutActivity"
+        app:action="@+id/to_AboutActv"
         tools:layout="@layout/about_actv" />
 
 </navigation>
