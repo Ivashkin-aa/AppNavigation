@@ -1,5 +1,6 @@
 package com.example.appnavigation.navgrap
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.*
 import com.example.appnavigation.R
 import com.example.appnavigation.databinding.MainActvBinding
+import com.example.appnavigation.startactivityforresult.AboutActivity
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -34,9 +36,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         (findViewById<View>(R.id.drawer_layout) as DrawerLayout).closeDrawer(GravityCompat.START)
-        return NavigationUI.onNavDestinationSelected(
-            item, controller
-        ) || super.onOptionsItemSelected(item)
+        return when (item.itemId) {
+            R.id.activityAbout -> {
+                controller.navigate(R.id.activityAbout)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
